@@ -18,6 +18,7 @@ export const me = createAsyncThunk('auth/me', async () => {
           authorization: token,
         },
       });
+      console.log("authSlice:",res)
       // console.log('authSlice:',res.data)
       if (res.data) {
         console.log("authSlice:", res.data)
@@ -43,6 +44,7 @@ export const authenticate = createAsyncThunk(
     try {
       const res = await axios.post(`/auth/${method}`, { username, password });
       window.localStorage.setItem(TOKEN, res.data.token);
+      console.log("auth/authenticate:", res)
       thunkAPI.dispatch(me());
     } catch (err) {
       if (err.response.data) {

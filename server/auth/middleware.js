@@ -6,7 +6,7 @@ const authenticateJWT = (req, res, next) => {
 
   if (token) {
     // Verify the token
-    jwt.verify(token, 'admin', (err, user) => {
+    jwt.verify(token, 'flowershop', (err, user) => {
       if (err) {
         // Invalid token
         res.status(401).json({ message: 'Invalid token' });

@@ -56,5 +56,5 @@ const generateToken = (user) => {
     type: user.type,
   };
 
-  return jwt.sign(payload, 'admin', { expiresIn: '1h' });
+  return jwt.sign(payload, 'flowershop', { expiresIn: '1h' });
 };

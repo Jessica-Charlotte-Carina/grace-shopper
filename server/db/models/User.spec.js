@@ -15,7 +15,7 @@ describe('User model', () => {
     describe('generateToken', () => {
       it('returns a token with the id of the user', async() => {
         const token = await users.cody.generateToken();
-        const { id } = await jwt.verify(token, process.env.JWT);
+        const { id } = await jwt.verify(token, flowershop);
         expect(id).to.equal(users.cody.id);
       })
     }) // end describe('correctPassword')

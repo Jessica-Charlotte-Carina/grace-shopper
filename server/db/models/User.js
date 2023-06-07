@@ -47,10 +47,11 @@ User.authenticate = async function({ username, password }) {
 };
 
 User.findByToken = async function(token) {
-  console.log("token hereee:", token)
-  // console.log(id)
+  console.log("token here:", token)
+  console.log("user.findbytoken:",process.env.JWT)
   try {
-    const JWTisValid = jwt.verify(token, 'admin'); // 'admin' is the key
+    const JWTisValid = jwt.verify(token, process.env.JWT); // 'flowershop' is the key
+    console.log(JWTisValid)
     const userId = JWTisValid.id; // Extract the user ID from the token payload
     const user = await User.findByPk(userId);
     // const user = await User.findByPk(id);

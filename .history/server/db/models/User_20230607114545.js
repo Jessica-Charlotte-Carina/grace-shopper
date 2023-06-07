@@ -47,18 +47,23 @@ User.authenticate = async function({ username, password }) {
 };
 
 User.findByToken = async function(token) {
-  console.log("token hereee:", token)
+  console.log("token here:", token)
+  console.log("user.findbytoken:",process.env.JWT)
   try {
-    const JTWisValid = jwt.verify(token, 'admin'); // 'admin' is the key
-    const user = await User.findByPk(id);
+    const JWTisValid = jwt.verify(token, process.env.JWT); // 'flowershop' is the key
+    console.log(JWTisValid)
+    const userId = JWTisValid.id; // Extract the user ID from the token payload
+    const user = await User.findByPk(userId);
+    // const user = await User.findByPk(id);
     if (!user) {
-      throw new Error('nooo');
+      // throw new Error('nooo');
+      return null
     }
     return user;
   } catch (ex) {
     const error = new Error('bad token in User.js');
     error.status = 401;
-    console.log(ex)
+    console.log("Error in User.js :",ex)
     // throw error;
   }
 };
