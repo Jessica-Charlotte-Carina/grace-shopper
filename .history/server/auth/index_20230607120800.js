@@ -37,8 +37,8 @@ router.post('/signup', async (req, res, next) => {
 
 router.get('/me', async (req, res, next) => {
   try {
-    const user = await User.findByToken(`Bearer ${req.headers.authorization}`);
-    // console.log(req)
+    const user = await User.findByToken(`Bearer` req.headers.authorization);
+    console.log(req)
     if (user) {
       res.send(user);
     } else {
@@ -52,11 +52,10 @@ router.get('/me', async (req, res, next) => {
 
 // Generate JWT token
 const generateToken = (user) => {
-  console.log(user)
   const payload = {
     id: user.id,
     type: user.type,
   };
 
-  return jwt.sign(payload, process.env.JWT, { expiresIn: '1h' });
+  return jwt.sign(payload, 'flowershop', { expiresIn: '1h' });
 };

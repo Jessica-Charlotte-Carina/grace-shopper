@@ -30,7 +30,7 @@ User.prototype.correctPassword = async function(candidatePwd) {
 };
 
 User.prototype.generateToken = function(user) {
-    // console.log(user)
+    console.log(user)
     const payload = {
       id: user.id,
       type: user.type,

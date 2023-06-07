@@ -29,14 +29,16 @@ User.prototype.correctPassword = async function(candidatePwd) {
   return await bcrypt.compare(candidatePwd, this.password);
 };
 
-User.prototype.generateToken = function(user) {
-    // console.log(user)
+User.prototype.generateToken = function() {
+  const generateToken = (user) => {
+    console.log(user)
     const payload = {
       id: user.id,
       type: user.type,
     };
   
-    return jwt.sign(payload, process.env.JWT, { expiresIn: '1h' });
+    return jwt.sign(payload, 'flowershop', { expiresIn: '1h' });
+  };
   // return jwt.sign({ id: this.id }, process.env.JWT);
 };
 
@@ -50,7 +52,7 @@ User.authenticate = async function({ username, password }) {
     error.status = 401;
     throw error;
   }
-  return user.generateToken(user);
+  return user.generateToken();
 };
 
 User.findByToken = async function(token) {

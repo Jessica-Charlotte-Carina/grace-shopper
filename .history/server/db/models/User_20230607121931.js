@@ -30,13 +30,13 @@ User.prototype.correctPassword = async function(candidatePwd) {
 };
 
 User.prototype.generateToken = function(user) {
-    // console.log(user)
+    console.log(user)
     const payload = {
       id: user.id,
       type: user.type,
     };
   
-    return jwt.sign(payload, process.env.JWT, { expiresIn: '1h' });
+    return jwt.sign(payload, 'flowershop', { expiresIn: '1h' });
   // return jwt.sign({ id: this.id }, process.env.JWT);
 };
 

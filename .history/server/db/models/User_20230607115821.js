@@ -29,15 +29,8 @@ User.prototype.correctPassword = async function(candidatePwd) {
   return await bcrypt.compare(candidatePwd, this.password);
 };
 
-User.prototype.generateToken = function(user) {
-    // console.log(user)
-    const payload = {
-      id: user.id,
-      type: user.type,
-    };
-  
-    return jwt.sign(payload, process.env.JWT, { expiresIn: '1h' });
-  // return jwt.sign({ id: this.id }, process.env.JWT);
+User.prototype.generateToken = function() {
+  return jwt.sign({ id: this.id }, process.env.JWT);
 };
 
 /**
@@ -50,22 +43,19 @@ User.authenticate = async function({ username, password }) {
     error.status = 401;
     throw error;
   }
-  return user.generateToken(user);
+  return user.generateToken();
 };
 
 User.findByToken = async function(token) {
   console.log("token here:", token)
   console.log("user.findbytoken:",process.env.JWT)
   try {
-    console.log("hit try block for findbytoken")
-    const JWTisValid = jwt.verify(token, process.env.JWT ); // 'flowershop' is the key
-    // console.log(JWTisValid)
+    const JWTisValid = jwt.verify(token, ''); // 'flowershop' is the key
+    console.log(JWTisValid)
     const userId = JWTisValid.id; // Extract the user ID from the token payload
     const user = await User.findByPk(userId);
-    
     // const user = await User.findByPk(id);
     if (!user) {
-      // console.log("not user")
       // throw new Error('nooo');
       return null
     }
