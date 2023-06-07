@@ -38,11 +38,11 @@ router.post('/signup', async (req, res, next) => {
 router.get('/me', async (req, res, next) => {
   try {
     const user = await User.findByToken(req.headers.authorization);
+
     if (user) {
       res.send(user);
     } else {
-      // res.status(401).json({ message: 'Unauthorized' });
-      res.send(null)
+      res.status(401).json({ message: 'Unauthorized' });
     }
   } catch (ex) {
     next(ex);

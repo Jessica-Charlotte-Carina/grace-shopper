@@ -7,7 +7,7 @@ module.exports = app;
 
 // Import the Product model
 const Product = require("../server/db/models/Product");
-// const { models: { Product } } = require("./db/models/Product");
+const { models: { Product } } = require("./db/models/Product");
 
 // logging middleware
 app.use(morgan("dev"));

@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
 });
 
 // POST create a new product
-router.post('/', authenticateJWT, async (req, res, next) => {
+router.post('/', authenticateAdmin, async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
     res.status(201).json(product);
@@ -23,7 +23,7 @@ router.post('/', authenticateJWT, async (req, res, next) => {
 });
 
 // PUT update a product
-router.put('/:id', authenticateJWT, async (req, res, next) => {
+router.put('/:id', authenticateAdmin, async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findByPk(id);
@@ -40,7 +40,7 @@ router.put('/:id', authenticateJWT, async (req, res, next) => {
 });
 
 // DELETE delete a product
-router.delete('/:id', authenticateJWT, async (req, res, next) => {
+router.delete('/:id', authenticateAdmin, async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findByPk(id);

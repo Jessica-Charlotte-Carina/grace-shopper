@@ -50,13 +50,12 @@ User.findByToken = async function(token) {
   console.log("token hereee:", token)
   // console.log(id)
   try {
-    const JWTisValid = jwt.verify(token, 'admin'); // 'admin' is the key
+    const JTWisValid = jwt.verify(token, 'admin'); // 'admin' is the key
     const userId = JWTisValid.id; // Extract the user ID from the token payload
     const user = await User.findByPk(userId);
     // const user = await User.findByPk(id);
     if (!user) {
-      // throw new Error('nooo');
-      return null
+      throw new Error('nooo');
     }
     return user;
   } catch (ex) {

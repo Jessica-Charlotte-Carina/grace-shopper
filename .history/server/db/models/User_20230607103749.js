@@ -55,8 +55,8 @@ User.findByToken = async function(token) {
     const user = await User.findByPk(userId);
     // const user = await User.findByPk(id);
     if (!user) {
-      // throw new Error('nooo');
-      return null
+      throw new Error('nooo');
+      return
     }
     return user;
   } catch (ex) {

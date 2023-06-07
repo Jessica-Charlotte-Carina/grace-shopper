@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { models: { Product } } = require('../db');
-const { authenticateJWT } = require('../auth/middleware');
+const { authenticateJWT } = require('../middleware');
 
 // GET all products
 router.get('/', async (req, res, next) => {

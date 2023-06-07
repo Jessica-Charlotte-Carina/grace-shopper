@@ -18,13 +18,8 @@ export const me = createAsyncThunk('auth/me', async () => {
           authorization: token,
         },
       });
-      // console.log('authSlice:',res.data)
-      if (res.data) {
-        console.log("authSlice:", res.data)
-        return res.data;
-      } else{
-        window.localStorage.clear()
-      }
+      console.log(res.data)
+      return res.data;
     } else {
       return {};
     }

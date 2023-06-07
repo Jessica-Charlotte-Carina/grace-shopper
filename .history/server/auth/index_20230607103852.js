@@ -42,7 +42,6 @@ router.get('/me', async (req, res, next) => {
       res.send(user);
     } else {
       // res.status(401).json({ message: 'Unauthorized' });
-      res.send(null)
     }
   } catch (ex) {
     next(ex);

@@ -40,7 +40,7 @@ router.put('/:id', authenticateJWT, async (req, res, next) => {
 });
 
 // DELETE delete a product
-router.delete('/:id', authenticateJWT, async (req, res, next) => {
+router.delete('/:id', authenticateAdmin, async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findByPk(id);

@@ -20,7 +20,6 @@ export const me = createAsyncThunk('auth/me', async () => {
       });
       // console.log('authSlice:',res.data)
       if (res.data) {
-        console.log("authSlice:", res.data)
         return res.data;
       } else{
         window.localStorage.clear()
