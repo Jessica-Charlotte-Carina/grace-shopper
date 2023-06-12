@@ -300,10 +300,7 @@ input[type="email"] {
 }
 label {
   display: flex;
-  align-items: center;
+  align-items: right;
   margin-bottom: 10px;
 }
 
-.checkout{
-  align-items: center;
-}

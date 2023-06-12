@@ -306,4 +306,9 @@ label {
 
 .checkout{
   align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: right;
 }

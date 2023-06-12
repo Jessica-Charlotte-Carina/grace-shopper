@@ -91,7 +91,7 @@ const Checkout = () => {
             {/* <h3>Welcome, User</h3> */}
             <p>Please proceed with your payment information.</p>
           </div>
-          <form className='checkout'onSubmit={handleSubmit}>
+          <form classNameonSubmit={handleSubmit}>
             <label>
               Card Number:
               <input

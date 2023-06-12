@@ -298,12 +298,6 @@ input[type="email"] {
   border-radius: 4px;
   /* align-items: ; */
 }
-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
 
-.checkout{
-  align-items: center;
-}
+
+label
