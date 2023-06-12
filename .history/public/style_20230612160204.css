@@ -291,18 +291,9 @@ p {
 
 input[type="text"],
 input[type="email"] {
-  width: 50%;
- 
+  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /* align-items: ; */
-}
-
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
-  margin-bottom: 10px;
+  box-sizing: border-box;
 }

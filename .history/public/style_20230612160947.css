@@ -300,9 +300,7 @@ input[type="email"] {
 }
 
 label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
 }

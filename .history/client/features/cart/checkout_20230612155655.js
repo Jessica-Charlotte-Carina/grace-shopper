@@ -148,7 +148,7 @@ const Checkout = () => {
         </div>
       ) : (
         !guestCheckout && (
-          <div>
+          <div className="checkout-card">
             <h2>Checkout</h2>
             <div className="checkout-options">
               <div className="option sign-in-sign-up">
@@ -171,9 +171,9 @@ const Checkout = () => {
       )}
 
       {guestCheckout && (
-          <div className="checkout-card">
+        <div>
           <h2>Guest Checkout</h2>
-          <form className='checkout' onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <label>
               First Name:
               <input

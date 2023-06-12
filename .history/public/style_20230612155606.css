@@ -288,21 +288,30 @@ p {
   
 }
 
-
-input[type="text"],
-input[type="email"] {
-  width: 50%;
- 
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  /* align-items: ; */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
+label {
   margin-bottom: 10px;
+}
+
+input {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
 }

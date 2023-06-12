@@ -171,9 +171,9 @@ const Checkout = () => {
       )}
 
       {guestCheckout && (
-          <div className="checkout-card">
+        <div>
           <h2>Guest Checkout</h2>
-          <form className='checkout' onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <label>
               First Name:
               <input

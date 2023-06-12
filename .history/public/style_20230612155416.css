@@ -285,24 +285,5 @@ p {
   border-radius: 25px;
   text-align: center;
   border: 5px solid white;
-  
 }
-
-
-input[type="text"],
-input[type="email"] {
-  width: 50%;
- 
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  /* align-items: ; */
-}
-
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
-  margin-bottom: 10px;
 }

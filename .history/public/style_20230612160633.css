@@ -296,13 +296,11 @@ input[type="email"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /* align-items: ; */
 }
 
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
+label {
+  display: flex;
+  /* flex-direction: column; */
+  align-content: flex-start;
   margin-bottom: 10px;
 }

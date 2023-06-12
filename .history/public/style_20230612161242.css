@@ -292,17 +292,15 @@ p {
 input[type="text"],
 input[type="email"] {
   width: 50%;
- 
+  box-sizing: border-box;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /* align-items: ; */
+  text-align: left; /* Align input text to the left */
 }
 
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
-  margin-bottom: 10px;
+label span {
+  margin-right: 10px;
+  width: 100px; /* Adjust the width as needed */
+  text-align: right; /* Align the label text to the right */
 }

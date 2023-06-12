@@ -173,7 +173,7 @@ const Checkout = () => {
       {guestCheckout && (
           <div className="checkout-card">
           <h2>Guest Checkout</h2>
-          <form className='checkout' onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <label>
               First Name:
               <input

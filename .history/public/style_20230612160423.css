@@ -292,17 +292,15 @@ p {
 input[type="text"],
 input[type="email"] {
   width: 50%;
- 
+  box-sizing: border-box;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /* align-items: ; */
 }
 
-label > input{
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: right; */
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 10px;
 }
