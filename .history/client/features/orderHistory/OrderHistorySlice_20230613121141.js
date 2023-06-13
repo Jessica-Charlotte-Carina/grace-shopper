@@ -30,7 +30,7 @@ export const OrderHistorySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderHistoryAsync.fulfilled, (state, action) => {
-      return action.payload; // update the state with fetched order history
+      return action.payload;
     });
   },
 });

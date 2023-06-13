@@ -9,7 +9,6 @@ const OrderDetails = () => {
   const orderDetails = useSelector((state) => state.orderDetails); // gets order details from redux store
   const dispatch = useDispatch();
 
-  // fetches order details when the component mounts or orderId changes
   useEffect(() => {
     console.log(orderId);
     dispatch(fetchOrderDetails(orderId));

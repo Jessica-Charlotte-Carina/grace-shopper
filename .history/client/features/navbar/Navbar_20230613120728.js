@@ -18,7 +18,7 @@ const Navbar = () => {
     <div>
       <nav>
         <h1>🌸 JCC Flower Shop 🌸</h1>
-        {isLoggedIn ? ( // nav bar for users that are logged in
+        {isLoggedIn ? ( // nav bar for users that are logge
           <div>
             <Link to="/home">Home</Link>
             <Link to="/cart">Cart</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
               Logout
             </button>
           </div>
-        ) : ( // nav bar for users not logged in
+        ) : (
           <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>

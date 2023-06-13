@@ -3,12 +3,11 @@ import axios from 'axios';
 
 const TOKEN = 'token';
 
-// async think to fetch order history
+// async think for 
 export const fetchOrderHistoryAsync = createAsyncThunk('orderhistory', async (userId) => {
   const token = window.localStorage.getItem(TOKEN);
   try {
     if (token) {
-      // make a get request to retrieve order history per user
       const res = await axios.get(`/api/orders/${userId}`);
       return res.data;
     } else {
@@ -23,14 +22,13 @@ export const fetchOrderHistoryAsync = createAsyncThunk('orderhistory', async (us
   }
 });
 
-// slice for order history
 export const OrderHistorySlice = createSlice({
   name: 'orderHistory',
   initialState: [],
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderHistoryAsync.fulfilled, (state, action) => {
-      return action.payload; // update the state with fetched order history
+      return action.payload;
     });
   },
 });

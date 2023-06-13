@@ -5,11 +5,10 @@ import { useParams } from "react-router-dom";
 
 
 const OrderDetails = () => {
-  let orderId = useParams().orderId; // gets orderId from URL params
-  const orderDetails = useSelector((state) => state.orderDetails); // gets order details from redux store
+  let orderId = useParams().orderId; /
+  const orderDetails = useSelector((state) => state.orderDetails);
   const dispatch = useDispatch();
 
-  // fetches order details when the component mounts or orderId changes
   useEffect(() => {
     console.log(orderId);
     dispatch(fetchOrderDetails(orderId));

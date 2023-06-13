@@ -32,7 +32,7 @@ export const OrderDetailsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderDetails.fulfilled, (state, action) => {
-        return action.payload; // update state with fetched order details
+        return action.payload;
       });
   },
 });

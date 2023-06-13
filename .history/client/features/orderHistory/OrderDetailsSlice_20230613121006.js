@@ -25,14 +25,13 @@ export const fetchOrderDetails = createAsyncThunk('orderDetails', async (orderId
   }
 });
 
-// slice for order details
 export const OrderDetailsSlice = createSlice({
   name: 'orderDetails',
   initialState: {},
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderDetails.fulfilled, (state, action) => {
-        return action.payload; // update state with fetched order details
+        return action.payload;
       });
   },
 });

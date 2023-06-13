@@ -10,7 +10,6 @@ export const fetchOrderDetails = createAsyncThunk('orderDetails', async (orderId
     if (token) {      
       console.log(orderId);
 
-      // make a get request to retrieve order details using the orderId
       const res = await axios.get(`/api/orders/orderDetails/${orderId}`);
       return res.data;
     } else {
@@ -25,14 +24,13 @@ export const fetchOrderDetails = createAsyncThunk('orderDetails', async (orderId
   }
 });
 
-// slice for order details
 export const OrderDetailsSlice = createSlice({
   name: 'orderDetails',
   initialState: {},
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderDetails.fulfilled, (state, action) => {
-        return action.payload; // update state with fetched order details
+        return action.payload;
       });
   },
 });

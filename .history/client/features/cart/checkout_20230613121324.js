@@ -17,8 +17,9 @@ const Checkout = () => {
     lastName: "",
     email: "",
   });
-
+  
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  const [ userLogged, setUserLoggedIn] = useState(false);
   const [orderNumber, setOrderNumber] = useState(null);
   const [orderCompleted, setOrderCompleted] = useState(false);
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const Checkout = () => {
     setGuestCheckout(true);
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -58,10 +60,8 @@ const Checkout = () => {
     let date = d.getDate();
 
     if (!guestCheckout) {
-      // order for logged-in user
       dispatch(placeOrder({userId, productsArray, number, total, tax, date}));
     } else {
-      // order for guest user
       dispatch(placeGuestOrder({userId, productsArray, number, total, tax, date}));
     }
 
@@ -91,7 +91,7 @@ const Checkout = () => {
         <div>
           <h2>Checkout</h2>
           <div>
-            <h3>Welcome!</h3>
+            <h3>Welcome, User</h3>
             <p>Please proceed with your payment information.</p>
           </div>
           <form onSubmit={handleSubmit}>

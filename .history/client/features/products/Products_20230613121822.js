@@ -13,9 +13,9 @@ const Products = () => {
   }, []);
 
   // using storage vs token
-  // storage: allows a session storage to store data on the client-side (brower) to persist data between different pages even when  user closes and reopens the browser
-  // token: for authentication and authorization
-  // therefore, to add items to a cart it is better to use session storage
+  // asllows a session storage to store data on the client-side (brower) to persist data between different pages even when 
+  // user closes and reopens the browser
+  // 
   const handleAddToCart = (product) => {
     addToStorage(product); // adds product to the cart storage
   };

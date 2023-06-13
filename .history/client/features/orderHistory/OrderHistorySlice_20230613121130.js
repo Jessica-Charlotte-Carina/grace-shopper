@@ -23,14 +23,13 @@ export const fetchOrderHistoryAsync = createAsyncThunk('orderhistory', async (us
   }
 });
 
-// slice for order history
 export const OrderHistorySlice = createSlice({
   name: 'orderHistory',
   initialState: [],
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOrderHistoryAsync.fulfilled, (state, action) => {
-      return action.payload; // update the state with fetched order history
+      return action.payload;
     });
   },
 });

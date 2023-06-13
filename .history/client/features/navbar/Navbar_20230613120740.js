@@ -27,7 +27,7 @@ const Navbar = () => {
               Logout
             </button>
           </div>
-        ) : ( // nav bar for users not logged in
+        ) : ( // nav bar for users 
           <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
