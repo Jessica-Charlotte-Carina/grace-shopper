@@ -58,19 +58,11 @@ const Checkout = () => {
     let date = d.getDate();
 
     if (!guestCheckout) {
-      let valid = validateCheckout();
-      if (valid) {
-        dispatch(placeOrder({userId, productsArray, number, total, tax, date}));
-      } else {
-        alert("Please fill out form with appropriate data");
-      }
+      // order for logged-in user
+      dispatch(placeOrder({userId, productsArray, number, total, tax, date}));
     } else {
-      let valid = validateCheckout() && validateGuest();
-      if (valid) {
-        dispatch(placeGuestOrder({productsArray, number, total, tax, date}));
-      } else {
-        alert("Please fill out form with appropriate data");
-      }
+      // order for guest user
+      dispatch(placeGuestOrder({userId, productsArray, number, total, tax, date}));
     }
 
     setCreditCard({

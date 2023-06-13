@@ -58,6 +58,13 @@ const Checkout = () => {
     let date = d.getDate();
 
     if (!guestCheckout) {
+<<<<<<< HEAD
+      // order for logged-in user
+      dispatch(placeOrder({userId, productsArray, number, total, tax, date}));
+    } else {
+      // order for guest user
+      dispatch(placeGuestOrder({userId, productsArray, number, total, tax, date}));
+=======
       let valid = validateCheckout();
       if (valid) {
         dispatch(placeOrder({userId, productsArray, number, total, tax, date}));
@@ -71,6 +78,7 @@ const Checkout = () => {
       } else {
         alert("Please fill out form with appropriate data");
       }
+>>>>>>> 275a05326c661920c73b48b84a13a6ea70acbdca
     }
 
     setCreditCard({
